@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "Delighted to welcome you!"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -76,38 +76,121 @@ redirect_from:
             width: 150px;
             text-align: center;
         }
+        .news-section {
+        background-color: #f1f1f1;
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 10px;
+    }
+
+    .news-title {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #512DA8; /* You can adjust the color */
+    }
+
+    .news-item {
+        margin-bottom: 15px;
+    }
+
+    .news-item-date {
+        font-size: 0.9em;
+        color: #888;
+    }
+
+    /* Hide news items by default */
+.news-item.hidden {
+    display: none;
+}
+
+/* Style for the "more"/"less" toggle button */
+.toggle-button {
+    cursor: pointer;
+    color: #512DA8;
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
-    <h1>Delighted to welcome you!</h1>
-    <p>My name is Brianna Wimer. I am currently navigating the exhilarating journey of my second year as a Ph.D. student at the prestigious <a href="https://www.nd.edu/">University of Notre Dame</a>. I am blessed to be in the Computer Science and Engineering program, with my advisor being <a href="http://sites.nd.edu/ronald-metoyer/">Dr. Ronald Metoyer</a>.</p>
+    
+    <p>My name is Brianna Wimer, and I'm in the third year of my Ph.D. studies at the <a href="https://www.nd.edu/">University of Notre Dame</a>, specifically in the Computer Science and Engineering department. I have the privilege of being advised by <a href="http://sites.nd.edu/ronald-metoyer/">Dr. Ronald Metoyer</a>. Currently, I'm a visiting student researcher at the <a href="https://www.washington.edu/">University of Washington</a> in Seattle, WA where I collaborate with <a href="https://www.cs.washington.edu/people/faculty/jmankoff">Dr. Jennifer Mankoff</a> in the <a href="https://make4all.org/">Make4All</a> lab.</p>
 
-    <p>I have chosen to devote my research efforts to the field of Human-Computer Interaction and Accessibility. My interests lie in diving deep to understand, design, and develop technologies that can augment the life experience of blind or low-vision individuals. The ultimate goal? Creating accessible interactive systems for data visualizations that significantly enhance their understanding and communication.</p>
+    <p>My research focus is on Human-Computer Interaction and Accessibility, with a special emphasis on visualization. I am deeply committed to understanding, designing, and developing technologies aimed at improving access to data for individuals with visual impairments. My ultimate goal is to create accessible interactive systems for data visualizations, enhancing both understanding and engagement for blind or low-vision users.</p>
+
+    <div class="news-section">
+        <p class="news-title">Latest News</p>
+        <!-- Add unique IDs to each news item -->
+        <div class="news-item" id="news-item-1">
+            <span class="news-item-date">September 1st, 2023</span>
+            <p>I'm thrilled to share that I'll be attending the IEEE VIS 2023 conference in Melbourne, courtesy of a diversity and inclusion scholarship.</p>
+        </div>
+        <div class="news-item" id="news-item-2">
+            <span class="news-item-date">August 6th, 2023</span>
+            <p>I've relocated to Seattle, WA, to collaborate with Dr. Jennifer Mankoff at the Make4All lab as a visiting researcher.</p>
+        </div>
+        
+        <div class="news-item" id="news-item-3">
+            <span class="news-item-date">July 10, 2023</span>
+            <p>I am honored to have received the Google Ph.D. Fellowship in the field of Human-Computer Interaction. <a href="https://engineering.nd.edu/news/brianna-wimer-named-2023-google-ph-d-fellow/">Read the full story on the College of Engineering's website.</a></p>
+        </div>
+        <div class="news-item hidden" id="news-item-4">
+            <span class="news-item-date">January 20th, 2023</span>
+            <p>Exciting news! Our research paper, titled <i>Understanding Food Planning Strategies of Food Insecure Populations,</i> has been accepted for presentation at CHI 2023 in Germany.</p>
+        </div>
+        
+    
+        <span id="toggle-button" class="toggle-button">More</span>
+    </div>
+    
+    <script>
+      const toggleButton = document.getElementById("toggle-button");
+      let expanded = false;
+    
+      toggleButton.addEventListener("click", function() {
+        // Toggle between showing and hiding extra news items
+        for (let i = 4; i <= 4; i++) {
+          const newsItem = document.getElementById(`news-item-${i}`);
+          newsItem.classList.toggle("hidden");
+        }
+    
+        // Update the toggle button's text
+        if (expanded) {
+          toggleButton.textContent = "More";
+        } else {
+          toggleButton.textContent = "Less";
+        }
+    
+        // Toggle the 'expanded' state
+        expanded = !expanded;
+      });
+    </script>
+    
+    <br>
 
     <p class="highlight">And, how can I miss introducing my scholarly partner who has been by side since freshman year of undegrad and now is helping me navigate the Ph.D. program? Meet Sunny, my four year old Goldendoodle. Far from the rigors of research, he's an expert in napping and has an unparalleled ability to beg for treats. His friendly presence adds an extra dash of joy to my academic journey!</p>
 
     <div class="image-row">
         <figure class="image-figure">
-            <img src="../images/sunny1.jpeg" alt="Sunny the Doodle 2020">
-            <figcaption>2019</figcaption>
+            <img src="../images/sunny1.jpeg" alt="African American woman in a white dress holding a white puppy, which is wearing a blue and pink shirt.">
         </figure>
         <figure class="image-figure">
-            <img src="../images/sunny2.jpeg" alt="Sunny the Doodle 2021">
-            <figcaption>2020</figcaption>
+            <img src="../images/sunny2.jpeg" alt="African American woman squatting beside a white dog, embracing it, with a scenic lake in the background.">
         </figure>
         <figure class="image-figure">
-            <img src="../images/sunny3.jpeg" alt="Sunny the Doodle 2022">
-            <figcaption>2021</figcaption>
+            <img src="../images/sunny3.jpeg" alt="African American woman grinning widely while holding a white dog that appears to be smiling.">
         </figure>
         <figure class="image-figure">
-            <img src="../images/sunny4.jpeg" alt="Sunny the Doodle 2023">
-            <figcaption>2022</figcaption>
+            <img src="../images/sunny4.jpeg" alt="African American woman receiving a nose lick from a white dog.">
         </figure>
         <figure class="image-figure">
-            <img src="../images/sunny5.jpeg" alt="Sunny the Doodle 2024">
-            <figcaption>2023</figcaption>
-        </figure>
+            <img src="../images/sunny5.jpeg" alt="White dog in a blue harness standing in front of the University of Notre Dame's Golden Dome.">
+        </figure>        
     </div>
+    <!-- Add this div to the end of your existing body content -->
+
+
+
 
 
 
