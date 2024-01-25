@@ -1,6 +1,6 @@
 # Hello, I'm Brianna Lynn Wimer! 👋
 
-I'm a second-year Ph.D. student at the University of Notre Dame, pursuing my degree in the Computer Science and Engineering program under the guidance of my advisor, Dr. Ronald Metoyer. I'm extremely grateful for the opportunity to advance my knowledge in such a prestigious institution.
+I'm a third Ph.D. student at the University of Notre Dame, pursuing my degree in the Computer Science and Engineering program under the guidance of my advisor, Dr. Ronald Metoyer. I'm extremely grateful for the opportunity to advance my knowledge in such a prestigious institution.
 
 ## My Research 🎓
 
