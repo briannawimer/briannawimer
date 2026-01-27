@@ -1,234 +1,308 @@
 ---
 permalink: /
-title: "Welcome!"
+title: "Hi! I am Brianna Wimer."
 excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 100px; 
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brianna Wimer</title>
 
-        h1 {
-            color: #673AB7;
-            text-align: center;
-        }
-
-        p {
-            line-height: 1.5;
-            font-size: 1.1em;
-        }
-
-        a {
-            color: #673AB7;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #512DA8;
-        }
-
-        img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 25%;
-            width: 200px;
-           
-        }
-
-        .highlight {
-            font-style: italic;
-            color: #512DA8;
-        }
-        .image-row {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        
-        .image-figure {
-            text-align: center;
-        }
-
-        .image-figure img {
-            width: 125x;
-            height: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-            margin: 2px;
-            display: block;
-        }
-
-        .image-figure figcaption {
-            font-size: 0.9em;
-            color: #333;
-            width: 150px;
-            text-align: center;
-        }
-        .news-section {
-        background-color: #f1f1f1;
-        padding: 20px;
-        margin-top: 40px;
-        border-radius: 10px;
+  <style>
+    :root{
+      --ink:#333;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --surface:#f3f4f6;
+      --accent:#673AB7;
+      --accent2:#512DA8;
+      --border:#e5e7eb;
+      --radius:12px;
     }
 
-    .news-title {
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #512DA8; /* You can adjust the color */
+    body{
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background-color: var(--bg);
+      padding: 20px;
+      margin: 0;
     }
 
-    .news-item {
-        margin-bottom: 15px;
+    /* Constrain width + center */
+    .container{
+      max-width: 880px;
+      margin: 0 auto;
+      padding-bottom: 80px;
     }
 
-    .news-item-date {
-        font-size: 0.9em;
-        color: #888;
+    a{
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover{
+      color: var(--accent2);
+      text-decoration: underline;
     }
 
-    /* Hide news items by default */
-.news-item.hidden {
-    display: none;
-}
+    /* Headline/lead */
+    .lead{
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-top: 6px;
+      margin-bottom: 14px;
+    }
+    .lede-line{
+      font-size: 1.05em;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
 
-/* Style for the "more"/"less" toggle button */
-.toggle-button {
-    cursor: pointer;
-    color: #512DA8;
-    text-decoration: underline;
-}
-    </style>
+    h1{
+      color: var(--accent);
+      margin: 0 0 8px 0;
+      font-size: 2em;
+      line-height: 1.2;
+    }
+
+    h2{
+      margin: 28px 0 10px 0;
+      font-size: 1.25em;
+      color: var(--accent2);
+    }
+
+    p{
+      line-height: 1.6;
+      font-size: 1.05em;
+      margin: 0 0 14px 0;
+    }
+
+    /* Cards */
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 16px;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 760px){
+      .grid{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .item-title{
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .item-desc{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98em;
+      line-height: 1.5;
+    }
+
+    /* Quote / research philosophy */
+    blockquote{
+      margin: 18px 0 0 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: #fafafa;
+      border-radius: 10px;
+      color: #222;
+    }
+    blockquote p{
+      margin: 0;
+      font-size: 1.02em;
+      line-height: 1.6;
+    }
+
+    /* Updates */
+    .updates-title{
+      font-size: 1.25em;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      color: var(--accent2);
+    }
+
+    .news-item{
+      margin: 0 0 4px 0;
+      
+      border-bottom: 1px solid var(--border);
+    }
+    /* remove divider from the last news item (regardless of the button after it) */
+        .card .news-item:last-of-type{
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 8px; /* optional: tighter spacing before button */
+        }
+
+    .news-item-date{
+      font-size: 0.92em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .hidden{
+      display: none;
+    }
+
+    /* Toggle button */
+    .toggle-button{
+      display: inline-block;
+      margin-top: 8px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: var(--accent2);
+      text-decoration: underline;
+      font-size: 1em;
+    }
+    .toggle-button:focus{
+      outline: 3px solid rgba(103,58,183,0.25);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+  </style>
 </head>
+
 <body>
-    
-    <p>Hi, I’m <strong>Brianna Wimer</strong>, a Ph.D candidate in Computer Science and Engineering at the <a href="https://www.nd.edu/">University of Notre Dame</a>, advised by <a href="http://sites.nd.edu/ronald-metoyer/">Dr. Ron Metoyer</a>. I live in <strong>Seattle, WA</strong>, where I work as a visiting researcher at the <a href="https://www.washington.edu/">University of Washington</a>, advised by <a href="https://www.cs.washington.edu/people/faculty/jmankoff">Dr. Jen Mankoff</a>.</p>
+  <main class="container">
+   
+
+    <p class="lead">
+      I am a Ph.D. candidate in Computer Science and Engineering studying how to make diagrams and visual representations meaningfully accessible—both to consume and to author—by people with disabilities.
+    </p>
+
+    <p class="lede-line">
+      University of Notre Dame (advised by <a href="http://sites.nd.edu/ronald-metoyer/">Dr. Ron Metoyer</a>) · Visiting researcher at the University of Washington (working with <a href="https://www.cs.washington.edu/people/faculty/jmankoff">Dr. Jen Mankoff</a>) · Based in Seattle, WA
+    </p>
+
+    <h2>Research</h2>
+    <p>
+      I design and build systems that treat diagrams as structured data rather than static images, enabling nonvisual navigation, interpretation, and authoring. My work sits at the intersection of accessibility and data visualization, with a focus on supporting educators in creating and sharing accessible course materials.
+    </p>
 
     <p>
-    I design and build systems that support accessible diagrams. My work sits at the intersection of accessibility and data visualization, with a focus on enabling educators to author and share accessible course content. My goal is to reduce the structural gaps created by inaccessible materials and build systems that allow people with disabilities to fully participate in learning, work, and everyday life.
-  </p>
+        In addition to my research contributions, I focus on translating this work into systems that can be directly used in classrooms and institutional settings. My vision is to build tools and infrastructure that move accessibility research beyond prototypes and into sustained, real-world classrooms, supporting equitable and inclusive learning experiences.
+    </p>
 
-  <p>
-    My research has focused on designing and evaluating accessible representations of diagrams such as flowcharts and data structure diagrams. This work has resulted in projects including
-    <a href="https://arbrtm.vercel.app/" target="_blank" rel="noopener noreferrer">Arboretum</a>,
-    a system for accessible data structure diagrams in computer science education, and
-    <a href="https://www.access-flows.com/" target="_blank" rel="noopener noreferrer">AccessFlow</a>,
-    a system that transforms flowchart images into accessible representations. AccessFlow was initially developed to support remediation—making existing diagrams accessible—but my current PhD work extends this effort to a broader challenge: enabling people to author diagrams nonvisually. This accessible authoring experience will be integrated into AccessFlow as the project evolves.
-  </p>
+    <p>
+        One example is
+        <a href="https://www.access-flows.com/" target="_blank" rel="noopener noreferrer">AccessFlow</a>,
+        a system that enables educators and institutions to transform flowchart images into accessible representations.
+    </p>
 
-    <p> Creating new knowledge as an academic is rewarding, but I continually return to a core question: <i>what is the point of understanding the potential of accessible diagrams and visualizations if that knowledge is not translated into systems people can use?</i> This question drives my commitment to translating academic work into real-world tools and systems, ensuring that inclusive technologies move beyond research and into sustained use.</p>
+    
 
-    <div class="news-section">
-        <p class="news-title">Latest News</p>
-            <!-- Add unique IDs to each news item -->
+    <h2>Updates</h2>
+    <div class="card" aria-label="Recent updates">
+      <p class="updates-title">Recent Activity</p>
 
-        <div class="news-item" id="news-item-16">
+      <div class="news-item" id="news-item-16">
         <span class="news-item-date">January 2026</span>
         <p>
-            <a href="https://www.access-flows.com/"><strong>AccessFlow</strong></a> was accepted into the Spring 2026 <strong>idea 2 IMPACT BootCamp</strong> from the University of Pittsburgh, a technology transfer program supporting the translation of assistive technology research innovations into real-world impact.
+          <a href="https://www.access-flows.com/"><strong>AccessFlow</strong></a> was accepted into the Spring 2026 <strong>idea 2 IMPACT BootCamp</strong> from the University of Pittsburgh, supporting translation of assistive technology research innovations into real-world impact.
         </p>
-        </div>
+      </div>
 
-        <div class="news-item" id="news-item-15">
+      <div class="news-item" id="news-item-15">
         <span class="news-item-date">January 2026</span>
-        <p>Excited to announce that our paper <em>"Nonvisual Support for Understanding and Reasoning about Data Structures"</em> has been accepted to <strong>CHI 2026</strong> and will be presented by <a href="https://www.riteshkanchi.com/">Ritesh Kanchi</a> and myself in Barcelona, Spain!</p>
-        </div>
+        <p>
+          Our paper <em>"Nonvisual Support for Understanding and Reasoning about Data Structures"</em> was accepted to <strong>CHI 2026</strong> and will be presented in Barcelona, Spain by <a href="https://www.riteshkanchi.com/">Ritesh Kanchi</a> and myself.
+        </p>
+      </div>
 
-        <div class="news-item" id="news-item-14">
+      <div class="news-item" id="news-item-14">
         <span class="news-item-date">December 2025</span>
-        <p>Thrilled to share that the <a href="https://www.access-flows.com/"><strong>AccessFlow</strong></a> has received $10,000 in Gemini credits from Google for the Gemini Academic Program. </p>
-        </div>
-        
-        <div class="news-item" id="news-item-13">
+        <p>
+          <a href="https://www.access-flows.com/"><strong>AccessFlow</strong></a> received $10,000 in Gemini credits from Google’s Gemini Academic Program.
+        </p>
+      </div>
+
+      <div class="news-item" id="news-item-13">
         <span class="news-item-date">November 2025</span>
         <p>
-            I officially advanced to Ph.D. candidacy and earned my M.S. in Computer Science and Engineering from the University of Notre Dame.
+          I advanced to Ph.D. candidacy and earned my M.S. in Computer Science and Engineering from the University of Notre Dame.
         </p>
-        </div>
+      </div>
 
-        <div class="news-item hidden" id="news-item-12">
+      <!-- Older items: keep hidden by default, no need to hardcode IDs in JS -->
+      <div class="news-item expandable hidden">
         <span class="news-item-date">May 2025</span>
-        <p>Thrilled to share that the <a href="https://accessviz.github.io/"><strong>AccessViz Workshop</strong></a> has been accepted for a second year! I’ll be leading the workshop in <strong>Vienna, Austria</strong> this November at <strong>IEEE VIS 2025</strong> to continue advancing conversations around accessible visualization research and practice.</p>
-        </div>
-        
-        <div class="news-item hidden" id="news-item-11">
+        <p>
+          The <a href="https://accessviz.github.io/"><strong>AccessViz Workshop</strong></a> was accepted for a second year; I’ll be leading the workshop in Vienna, Austria at <strong>IEEE VIS 2025</strong>.
+        </p>
+      </div>
+
+      <div class="news-item expandable hidden">
         <span class="news-item-date">January 2025</span>
-        <p>Excited to announce that our paper <em>"Autoethnographic Insights from Neurodivergent GAI “Power Users”"</em> has been accepted to <strong>CHI 2025</strong> and will be presented by <a href="https://kateglazko.com/">Kate Glazko</a> in Tokyo, Japan!</p>
-        </div>
+        <p>
+          Our paper <em>"Autoethnographic Insights from Neurodivergent GAI “Power Users”"</em> was accepted to <strong>CHI 2025</strong> and presented by <a href="https://kateglazko.com/">Kate Glazko</a> in Tokyo, Japan.
+        </p>
+      </div>
 
-        <div class="news-item hidden" id="news-item-10">
+      <div class="news-item expandable hidden">
         <span class="news-item-date">December 2024</span>
-        <p>Our paper <em>"Accessible Flowcharts: A Feasibility Study with BVI Participants"</em> has been accepted to the <strong>Journal on Technology and Persons with Disabilities</strong>. I will present this paper at CSUN 2025 in Anaheim, California.</p>
-        </div>
+        <p>
+          Our paper <em>"Accessible Flowcharts: A Feasibility Study with BVI Participants"</em> was accepted to the <strong>Journal on Technology and Persons with Disabilities</strong>; I presented at CSUN 2025 in Anaheim, California.
+        </p>
+      </div>
 
-        <div class="news-item hidden" id="news-item-9">
+      <div class="news-item expandable hidden">
         <span class="news-item-date">April 2024</span>
-        <p>Our paper <em>"Beyond Static Labels: Unpacking Nutrition Comprehension in the Digital Age"</em> has been accepted to <strong>CHI 2024</strong>. I will be presenting this paper at CHI 2024 in Honolulu, Hawaii. </p>
-        </div>
+        <p>
+          Our paper <em>"Beyond Static Labels: Unpacking Nutrition Comprehension in the Digital Age"</em> was accepted to <strong>CHI 2024</strong> and presented in Honolulu, Hawaii.
+        </p>
+      </div>
 
-        <div class="news-item hidden" id="news-item-8">
-        <span class="news-item-date">April 2024</span>
-        <p>Our paper <em>"Integrating Expertise in LLMs: Crafting a Customized Nutrition Assistant with Refined Template Instructions"</em> has been accepted to <strong>CHI 2024</strong>. <a href="https://lucyinstitute.nd.edu/people/graduate-scholars/2022-2024-lucy-graduate-scholars-cohort/annalisa-szymanski/">Annalisa Syzmanski</a> will be presenting this paper at CHI 2024 in Honolulu, Hawaii. </p></p>
-        </div>
+      <div class="news-item expandable hidden">
+        <span class="news-item-date">January 6, 2024</span>
+        <p>
+          Our TVCG paper on accessible data representations for non-vision disabilities was accepted. Details <a href="https://www.briannawimer.com/publications/2024-01-22-TVCG-24">here</a>.
+        </p>
+      </div>
 
-        <div class="news-item hidden" id="news-item-7">
-        <span class="news-item-date">April 2024</span>
-        <p>Our paper <em>"SPICA: Interactive Video Content Exploration through Augmented Audio Descriptions for Blind or Low-Vision Viewers"</em> has been accepted to <strong>CHI 2024</strong>. <a href="https://zning.co/">Ning Zheng</a> will be presenting this paper at CHI 2024 in Honolulu, Hawaii.</p>
-        </div>
+      <div class="news-item expandable hidden">
+        <span class="news-item-date">July 10, 2023</span>
+        <p>
+          I received the Google Ph.D. Fellowship in Human-Computer Interaction.
+          <a href="https://engineering.nd.edu/news/brianna-wimer-named-2023-google-ph-d-fellow/">Read the story.</a>
+        </p>
+      </div>
 
-        <div class="news-item hidden" id="news-item-6">
-        <span class="news-item-date">January 6th, 2024</span>
-        <p>I'm thrilled to share that our TVCG paper on accessible data representations for non-vision disabilities has been accepted. More information about the paper can be found <a href="https://www.briannawimer.com/publications/2024-01-22-TVCG-24">here</a>.</p>
-        </div>
-
-        <div class="news-item hidden" id="news-item-5">
-            <span class="news-item-date">January 6th, 2024</span>
-            <p>I'm thrilled to share that our TVCG paper on accessibile data represenations for non-vision disabilities has been accepted. More information about the paper can be found <a href="https://www.briannawimer.com//publications/2024-01-22-TVCG-24">here</a>. </p>
-        </div>
-        <div class="news-item hidden" id="news-item-4">
-            <span class="news-item-date">September 1st, 2023</span>
-            <p>I'm thrilled to share that I'll be attending the IEEE VIS 2023 conference in Melbourne, courtesy of a diversity and inclusion scholarship.</p>
-        </div>
-        <div class="news-item hidden" id="news-item-3">
-            <span class="news-item-date">August 6th, 2023</span>
-            <p>I've relocated to Seattle, WA, to collaborate with Dr. Jennifer Mankoff at the Make4All lab as a visiting researcher.</p>
-        </div>
-        
-        <div class="news-item hidden" id="news-item-2">
-            <span class="news-item-date">July 10, 2023</span>
-            <p>I am honored to have received the Google Ph.D. Fellowship in the field of Human-Computer Interaction. <a href="https://engineering.nd.edu/news/brianna-wimer-named-2023-google-ph-d-fellow/">Read the full story on the College of Engineering's website.</a></p>
-        </div>
-        <div class="news-item hidden" id="news-item-1">
-            <span class="news-item-date">January 20th, 2023</span>
-            <p>Exciting news! Our research paper, titled <i>Understanding Food Planning Strategies of Food Insecure Populations,</i> has been accepted for presentation at CHI 2023 in Germany.</p>
-        </div>
-        
-    
-        <span id="toggle-button" class="toggle-button" role="button" tabindex="0" aria-expanded="false">More</span>
+      <button id="toggle-button" class="toggle-button" aria-expanded="false" type="button">
+        More
+      </button>
     </div>
-    
+
     <script>
   const toggleButton = document.getElementById("toggle-button");
+  const expandableItems = document.querySelectorAll(".news-item.expandable");
   let expanded = false;
 
   function toggleNews() {
-    // Toggle items 12 down to 1 (keep 16–13 always visible)
-    for (let i = 12; i >= 1; i--) {
-      const item = document.getElementById(`news-item-${i}`);
-      if (item) item.classList.toggle("hidden");
-    }
+    expandableItems.forEach((item) => {
+      item.classList.toggle("hidden", expanded);
+    });
 
     expanded = !expanded;
     toggleButton.textContent = expanded ? "Less" : "More";
@@ -236,18 +310,9 @@ redirect_from:
   }
 
   toggleButton.addEventListener("click", toggleNews);
-  toggleButton.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      toggleNews();
-    }
-  });
 </script>
-    
-    <br>
 
-   
-    <!-- Add this div to the end of your existing body content -->
 
+  </main>
 </body>
 </html>
