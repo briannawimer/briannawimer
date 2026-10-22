@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Brianna Lynn Wimer"
 title_separator          : "-"
 name                     : &name "Brianna Wimer"
-description              : &description "Ph.D Student"
+description              : &description "Runway Startup Postdoc at Cornell Tech"
 url                      : https://www.briannawimer.com/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "briannawimer/briannawimer.github.io"
@@ -81,9 +81,9 @@ analytics:
 # Site Author
 author:
   name             : "Brianna L. Wimer"
-  avatar           : "headshot.jpg"
-  bio              : "Ph.D. Student at University of Notre Dame"
-  location         : "Seattle, WA"
+  avatar           : "Brianna_Wimer.png"
+  bio              : "Runway Startup Postdoc at Cornell Tech"
+  location         : "New York, NY"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=Wi-knxYAAAAJ&hl=en&authuser=1"
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : "brianna-wimer/"
   orcid            : 
   pinterest        :
   soundcloud       :
